@@ -81,9 +81,15 @@ class _OboardingScreenState extends State<OboardingScreen> {
           child: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height / 2,
-            decoration: BoxDecoration(
-                color: Color(0xff363CC0),
-                image: DecorationImage(fit: BoxFit.fitWidth, image: NetworkImage(model.image))),
+            decoration: const BoxDecoration(
+              color: Color(0xff363CC0),
+            ),
+            child: SafeArea(
+                top: true,
+                bottom: false,
+                child: Image.network(
+                  model.image,
+                )),
           ),
         ),
         Container(
