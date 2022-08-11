@@ -128,6 +128,7 @@ class _OboardingScreenState extends State<OboardingScreen> {
         child: Padding(
           padding: const EdgeInsets.only(left: 24, right: 24),
           child: CustomButton(
+            disabled: _current != 2,
             text: 'Get Started',
             onTap: () {},
           ),
