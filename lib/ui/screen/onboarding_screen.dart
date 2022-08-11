@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:doctor_meet/model/slider_model.dart';
 import 'package:doctor_meet/ui/components/custom_button.dart';
+import 'package:doctor_meet/ui/screen/components.dart';
 import 'package:doctor_meet/ui/screen/home_screen.dart';
 import 'package:doctor_meet/utils/mock.dart';
 import 'package:flutter/material.dart';
@@ -141,6 +142,7 @@ class _OboardingScreenState extends State<OboardingScreen> {
                 _controller.animateToPage(_current + 1);
               } else
                 Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => ComponentScreen()));
             },
           ),
         ),
