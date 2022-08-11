@@ -33,6 +33,12 @@ class TopRatedDoctorWidget extends StatelessWidget {
               itemBuilder: (context, index) {
                 return TopRatedDoctorItem(
                   model: items[index],
+                  onSelect: (item) {
+                    Logger.print("onSelect");
+                  },
+                  onDirectMessageSelect: (item) {
+                    Logger.print("onDirectMessageSelect");
+                  },
                 );
               },
               separatorBuilder: (context, index) => const SizedBox(height: 16, width: 16)),
