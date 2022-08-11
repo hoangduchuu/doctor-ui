@@ -2,10 +2,11 @@ import 'package:doctor_meet/utils/config_color.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key, required this.text, required this.onTap}) : super(key: key);
+  const CustomButton({Key? key, required this.text, required this.onTap, this.disabled = false}) : super(key: key);
 
   final String text;
   final VoidCallback onTap;
+  final bool disabled;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(16)),
         ),
       ),
-      onPressed: () => onTap(),
+      onPressed: disabled ? null : onTap,
       child: Text(text),
     );
   }

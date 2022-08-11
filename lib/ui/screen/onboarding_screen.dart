@@ -35,6 +35,7 @@ class _OboardingScreenState extends State<OboardingScreen> {
               options: CarouselOptions(
                   height: MediaQuery.of(context).size.height,
                   viewportFraction: 1,
+                  enableInfiniteScroll: false,
                   onPageChanged: (index, reason) {
                     setState(() {
                       _current = index;
@@ -93,7 +94,11 @@ class _OboardingScreenState extends State<OboardingScreen> {
           ),
         ),
         Container(
-          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 2 + 24),
+          padding: EdgeInsets.only(
+            top: MediaQuery.of(context).size.height / 2 + 24,
+            left: 16,
+            right: 16,
+          ),
           child: Column(
             children: [
               Text(
