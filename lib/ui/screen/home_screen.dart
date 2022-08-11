@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
                 CategoryWidget(
                   items: Mock().getCategory(),
                 ),
-                TopRatedDoctorWidget()
+                TopRatedDoctorWidget(items: Mock().getDoctors(),)
               ],
             ),
           ),

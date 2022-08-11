@@ -1,4 +1,5 @@
 import 'package:doctor_meet/model/category_model.dart';
+import 'package:doctor_meet/model/doctor_model.dart';
 import 'package:doctor_meet/model/slider_model.dart';
 
 class Mock {
@@ -32,6 +33,34 @@ class Mock {
       CategoryModel(icon: 'assets/tooth.png', name: 'Dentist'),
       CategoryModel(icon: 'assets/heartbeat.png', name: 'Heart surgeon'),
       CategoryModel(icon: 'assets/bone.png', name: 'Bone Specialist'),
+    ];
+  }
+
+  List<DoctorModel> getDoctors() {
+    return [
+      DoctorModel(
+        id: '1',
+        name: 'John doe',
+        specialty: 'Dental',
+        ratingScore: 4.8,
+        avatar: 'https://i.pravatar.cc/300?img=1',),
+      DoctorModel(id: '2',
+          name: 'Alex',
+          specialty: 'Heart',
+          ratingScore: 4.9,
+          avatar: 'https://i.pravatar.cc/300?img=2'),
+      DoctorModel(
+          id: '3',
+          name: 'Chicharito',
+          specialty: 'Heart',
+          ratingScore: 4.7,
+          avatar: 'https://i.pravatar.cc/300?img=3',),
+      DoctorModel(
+        id: '5',
+        name: 'Ronaldo',
+        specialty: 'Sport health',
+        ratingScore: 4.5,
+        avatar: 'https://i.pravatar.cc/300?img=4',),
     ];
   }
 }
