@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:doctor_meet/widgets/appointment_widget.dart';
 import 'package:doctor_meet/ui/components/header_home.dart';
 import 'package:doctor_meet/utils/config_color.dart';
@@ -29,7 +27,9 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
                 AppointmentWidget(),
-                CategoryWidget(),
+                CategoryWidget(
+                  items: Mock().getCategory(),
+                ),
                 TopRatedDoctorWidget()
               ],
             ),
