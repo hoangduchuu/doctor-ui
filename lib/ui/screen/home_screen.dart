@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:doctor_meet/widgets/appointment_widget.dart';
 import 'package:doctor_meet/ui/components/header_home.dart';
 import 'package:doctor_meet/utils/config_color.dart';
 import 'package:doctor_meet/utils/logger.dart';
@@ -12,20 +15,23 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: ConfigColor.bgColor,
       body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: HomeHeaderComponent(
+        child: Container(
+          padding: EdgeInsets.all(8),
+          child: Column(
+            children: [
+              HomeHeaderComponent(
                 avatarUrl: Mock().getAvatar(),
                 onMenuPressed: () {
                   Logger.print('Home Menu pressed');
                 },
               ),
-            ),
-          ],
+              AppointmentWidget(),
+            ],
+          ),
         ),
       ),
     );
   }
+
+
 }
