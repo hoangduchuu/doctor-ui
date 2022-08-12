@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:doctor_meet/model/slider_model.dart';
 import 'package:doctor_meet/ui/components/custom_button.dart';
@@ -88,8 +89,8 @@ class _OboardingScreenState extends State<OboardingScreen> {
             child: SafeArea(
                 top: true,
                 bottom: false,
-                child: Image.network(
-                  model.image,
+                child: CachedNetworkImage(
+                  imageUrl: model.image,
                 )),
           ),
         ),
@@ -141,7 +142,7 @@ class _OboardingScreenState extends State<OboardingScreen> {
               } else {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
               }
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => ComponentScreen()));
+              // Navigator.push(context, MaterialPageRoute(builder: (context) => ComponentScreen()));
             },
           ),
         ),

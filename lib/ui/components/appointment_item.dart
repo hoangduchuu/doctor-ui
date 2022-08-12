@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:doctor_meet/model/appointment_model.dart';
 import 'package:doctor_meet/utils/date_utils.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,9 @@ class AppointmentItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CircleAvatar(
-                  backgroundImage: NetworkImage(model.doctor.avatar),
+                  backgroundImage: CachedNetworkImageProvider(
+                    model.doctor.avatar,
+                  ),
                   radius: 20.0,
                 ),
                 const SizedBox(width: 12.0),

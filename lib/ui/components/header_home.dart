@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:doctor_meet/utils/config_color.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,7 @@ class HomeHeaderComponent extends StatelessWidget {
     return Row(
       children: [
         CircleAvatar(
-          backgroundImage: NetworkImage(avatarUrl),
+          backgroundImage: CachedNetworkImageProvider(avatarUrl),
         ),
         const SizedBox(width: 12.0),
         Expanded(
