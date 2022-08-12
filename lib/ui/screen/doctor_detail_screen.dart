@@ -101,7 +101,8 @@ class DoctorDetailScreen extends StatelessWidget {
           SafeArea(
             top: false,
             child: Container(
-              padding: const EdgeInsets.only(left: 24, right: 24),
+              color: Colors.transparent,
+              padding: const EdgeInsets.only(left: 24, right: 24, bottom: 18, top: 4),
               width: MediaQuery.of(context).size.width,
               child: CustomButton(
                 // disabled: _current != 2 ,

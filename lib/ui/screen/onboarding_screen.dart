@@ -148,17 +148,16 @@ class _OboardingScreenState extends State<OboardingScreen> {
       width: MediaQuery.of(context).size.width,
       child: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(left: 24, right: 24),
+          padding: const EdgeInsets.only(left: 24, right: 24,bottom: 18),
           child: CustomButton(
             // disabled: _current != 2 ,
-            text: _current != 2 ? "Next" : 'Get Started',
+            text: _current != 2 ? 'Next' : 'Get Started',
             onTap: () {
               if (_current < 2) {
                 _controller.animateToPage(_current + 1);
               } else {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
               }
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => ComponentScreen()));
             },
           ),
         ),
