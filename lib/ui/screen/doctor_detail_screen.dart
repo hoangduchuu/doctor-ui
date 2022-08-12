@@ -21,11 +21,16 @@ class DoctorDetailScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
+          //region content
           Expanded(
             child: SingleChildScrollView(
               child: Column(
                 children: [
+                  //region header
                   DoctorHeaderWidget(doctor: doctor),
+                  //endregion
+
+                  //region bellow header
                   Container(
                     padding: const EdgeInsets.only(left: 16, right: 16, bottom: 0, top: 16),
                     child: Column(
@@ -82,10 +87,14 @@ class DoctorDetailScreen extends StatelessWidget {
                       ],
                     ),
                   )
+                  //endregion
                 ],
               ),
             ),
           ),
+          //endregion
+
+          //region fixed bottom button
           SafeArea(
             top: false,
             child: Container(
@@ -99,6 +108,7 @@ class DoctorDetailScreen extends StatelessWidget {
               ),
             ),
           )
+          //endregion
         ],
       ),
     );
