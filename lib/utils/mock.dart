@@ -15,13 +15,13 @@ class Mock {
         subContent: 'Find a specialist that you only need on a consulting application',
         position: 2,
         content: 'Realtime video call with Doctor',
-        image: 'https://i.imgur.com/8DoWCKl_d.webp?maxwidth=760&fidelity=grand',
+        image: 'https://i.imgur.com/o2PGmwF.png',
       ),
       SliderModel(
         subContent: 'Find a specialist that you only need on a consulting application',
         position: 3,
         content: 'Book an appointment at home',
-        image: 'https://i.imgur.com/boSpNG7.png',
+        image: 'https://i.imgur.com/yeim8Hv.png',
       ),
     ];
   }
