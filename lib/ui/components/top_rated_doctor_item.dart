@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:doctor_meet/model/doctor_model.dart';
 import 'package:doctor_meet/utils/config_color.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +63,7 @@ class TopRatedDoctorItem extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16.0),
-                        image: DecorationImage(image: NetworkImage(model.avatar), fit: BoxFit.cover)),
+                        image: DecorationImage(image: CachedNetworkImageProvider(model.avatar), fit: BoxFit.cover)),
                   ),
                   const SizedBox(width: 16.0),
                   Column(

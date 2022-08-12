@@ -32,14 +32,28 @@ class TopRatedDoctorWidget extends StatelessWidget {
               shrinkWrap: true,
               itemCount: items.length,
               itemBuilder: (context, index) {
-                return TopRatedDoctorItem(
-                  model: items[index],
-                  onSelect: (item) {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDetailScreen(doctor: item,)));
-                  },
-                  onDirectMessageSelect: (item) {
-                    Logger.print("onDirectMessageSelect");
-                  },
+                return HeroMode(
+                  enabled: false,
+                  child: Hero(
+                    tag: items[index].id,
+                    child: Material(
+                      type: MaterialType.transparency,
+                      child: TopRatedDoctorItem(
+                        model: items[index],
+                        onSelect: (item) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DoctorDetailScreen(
+                                        doctor: item,
+                                      )));
+                        },
+                        onDirectMessageSelect: (item) {
+                          Logger.print("onDirectMessageSelect");
+                        },
+                      ),
+                    ),
+                  ),
                 );
               },
               separatorBuilder: (context, index) => const SizedBox(height: 16, width: 16)),
