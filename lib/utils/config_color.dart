@@ -9,5 +9,6 @@ class ConfigColor {
   static Color bgColor = Color(0xffFFFFFF);
 
   static Color text = Color(0xff081d3f);
+  static Color textBlack = Color(0xff353535);
   static Color textGrey = Color(0xFF888888);
 }

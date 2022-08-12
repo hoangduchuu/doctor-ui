@@ -1,7 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:doctor_meet/model/doctor_model.dart';
+import 'package:doctor_meet/ui/components/header_label_component.dart';
 import 'package:doctor_meet/utils/config_color.dart';
 import 'package:flutter/material.dart';
+import 'package:readmore/readmore.dart';
 
 class DoctorDetailScreen extends StatelessWidget {
   const DoctorDetailScreen({Key? key, required this.doctor}) : super(key: key);
@@ -14,8 +16,47 @@ class DoctorDetailScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
+        children: [DoctorHeaderWidget(doctor: doctor), DescriptionWidget(doctor: doctor)],
+      ),
+    );
+  }
+}
+
+class DescriptionWidget extends StatelessWidget {
+  const DescriptionWidget({
+    Key? key,
+    required this.doctor,
+  }) : super(key: key);
+
+  final DoctorModel doctor;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          DoctorHeaderWidget(doctor: doctor),
+          const SizedBox(
+            height: 16,
+          ),
+          const HeaderLabelComponent(
+            labelName: 'Description',
+            hideSeeAllLabel: true,
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          ReadMoreText(
+            doctor.description,
+            trimLines: 2,
+            style: TextStyle(color: ConfigColor.textBlack, fontSize: 16),
+            colorClickableText: ConfigColor.secondary,
+            trimMode: TrimMode.Line,
+            delimiter: '',
+            trimCollapsedText: '...Read more',
+            trimExpandedText: ' Less',
+          )
         ],
       ),
     );
