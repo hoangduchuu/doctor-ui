@@ -11,4 +11,5 @@ class ConfigColor {
   static Color text = const Color(0xff081d3f);
   static Color textBlack = const Color(0xff353535);
   static Color textGrey = const Color(0xFF888888);
+  static Color grey = const Color(0xFFC4C4C4);
 }

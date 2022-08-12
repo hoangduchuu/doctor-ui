@@ -4,6 +4,7 @@ import 'package:doctor_meet/model/slider_model.dart';
 import 'package:doctor_meet/ui/components/aura_light_component.dart';
 import 'package:doctor_meet/ui/components/custom_button.dart';
 import 'package:doctor_meet/ui/screen/home_screen.dart';
+import 'package:doctor_meet/utils/config_color.dart';
 import 'package:doctor_meet/utils/mock.dart';
 import 'package:flutter/material.dart';
 
@@ -64,9 +65,7 @@ class _OboardingScreenState extends State<OboardingScreen> {
                     height: 12.0,
                     margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: (Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black)
-                            .withOpacity(_current == entry.key ? 0.9 : 0.4)),
+                        shape: BoxShape.circle, color: (_current == entry.key) ? ConfigColor.primaryColor : ConfigColor.grey),
                   ),
                 );
               }).toList()),
