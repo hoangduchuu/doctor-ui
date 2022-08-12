@@ -1,6 +1,7 @@
 import 'package:doctor_meet/model/doctor_model.dart';
 import 'package:doctor_meet/ui/components/header_label_component.dart';
 import 'package:doctor_meet/ui/components/top_rated_doctor_item.dart';
+import 'package:doctor_meet/ui/screen/doctor_detail_screen.dart';
 import 'package:doctor_meet/utils/config_color.dart';
 import 'package:doctor_meet/utils/logger.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class TopRatedDoctorWidget extends StatelessWidget {
                 return TopRatedDoctorItem(
                   model: items[index],
                   onSelect: (item) {
-                    Logger.print("onSelect");
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDetailScreen(doctor: item,)));
                   },
                   onDirectMessageSelect: (item) {
                     Logger.print("onDirectMessageSelect");
