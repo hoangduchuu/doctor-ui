@@ -1,3 +1,4 @@
+import 'package:doctor_meet/model/appointment_model.dart';
 import 'package:doctor_meet/model/category_model.dart';
 import 'package:doctor_meet/model/doctor_model.dart';
 import 'package:doctor_meet/model/slider_model.dart';
@@ -43,24 +44,71 @@ class Mock {
         name: 'John doe',
         specialty: 'Dental',
         ratingScore: 4.8,
-        avatar: 'https://i.pravatar.cc/300?img=1',),
-      DoctorModel(id: '2',
-          name: 'Alex',
-          specialty: 'Heart',
-          ratingScore: 4.9,
-          avatar: 'https://i.pravatar.cc/300?img=2'),
+        avatar: 'https://i.pravatar.cc/300?img=1',
+      ),
       DoctorModel(
-          id: '3',
-          name: 'Chicharito',
-          specialty: 'Heart',
-          ratingScore: 4.7,
-          avatar: 'https://i.pravatar.cc/300?img=3',),
+          id: '2', name: 'Alex', specialty: 'Heart', ratingScore: 4.9, avatar: 'https://i.pravatar.cc/300?img=2'),
+      DoctorModel(
+        id: '3',
+        name: 'Chicharito',
+        specialty: 'Heart',
+        ratingScore: 4.7,
+        avatar: 'https://i.pravatar.cc/300?img=3',
+      ),
       DoctorModel(
         id: '5',
         name: 'Ronaldo',
         specialty: 'Sport health',
         ratingScore: 4.5,
-        avatar: 'https://i.pravatar.cc/300?img=4',),
+        avatar: 'https://i.pravatar.cc/300?img=4',
+      ),
+    ];
+  }
+
+  List<AppointmentModel> getAppointment() {
+    return [
+      AppointmentModel(
+        specialty: '${getCategory()[0]}',
+        dateStart: '2022-09-10T00:00:00.000000Z',
+        dateEnd: '2022-09-10T00:30:00.000000Z',
+        doctor: getDoctors()[0],
+      ),
+      AppointmentModel(
+        specialty: getCategory()[1].name,
+        dateStart: '2022-09-10T00:00:00.000000Z',
+        dateEnd: '2022-09-10T00:30:00.000000Z',
+        doctor: getDoctors()[1],
+      ),
+      AppointmentModel(
+        specialty: getCategory()[2].name,
+        dateStart: '2022-09-10T00:00:00.000000Z',
+        dateEnd: '2022-09-10T00:30:00.000000Z',
+        doctor: getDoctors()[2],
+      ),
+      AppointmentModel(
+        specialty: getCategory()[1].name,
+        dateStart: '2022-09-10T00:00:00.000000Z',
+        dateEnd: '2022-09-10T00:30:00.000000Z',
+        doctor: getDoctors()[3],
+      ),
+      AppointmentModel(
+        specialty: getCategory()[0].name,
+        dateStart: '2022-09-10T00:00:00.000000Z',
+        dateEnd: '2022-09-10T00:30:00.000000Z',
+        doctor: getDoctors()[1],
+      ),
+      AppointmentModel(
+        specialty: getCategory()[2].name,
+        dateStart: '2022-09-10T00:00:00.000000Z',
+        dateEnd: '2022-09-10T00:30:00.000000Z',
+        doctor: getDoctors()[3],
+      ),
+      AppointmentModel(
+        specialty: getCategory()[0].name,
+        dateStart: '2022-09-10T00:00:00.000000Z',
+        dateEnd: '2022-09-10T00:30:00.000000Z',
+        doctor: getDoctors()[3],
+      ),
     ];
   }
 }

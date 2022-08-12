@@ -26,11 +26,15 @@ class HomeScreen extends StatelessWidget {
                     Logger.print('Home Menu pressed');
                   },
                 ),
-                AppointmentWidget(),
+                AppointmentWidget(
+                  items: Mock().getAppointment(),
+                ),
                 CategoryWidget(
                   items: Mock().getCategory(),
                 ),
-                TopRatedDoctorWidget(items: Mock().getDoctors(),)
+                TopRatedDoctorWidget(
+                  items: Mock().getDoctors(),
+                )
               ],
             ),
           ),
