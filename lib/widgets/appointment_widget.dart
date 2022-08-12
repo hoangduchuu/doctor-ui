@@ -24,17 +24,13 @@ class AppointmentWidget extends StatelessWidget {
           },
         ),
         Stack(
+          alignment: Alignment.center,
           children: [
             Positioned(
-              left: 0,
-              right: 0,
-              top: 0,
-              bottom: 0,
-              child: Center(
-                child: CustomButton(
-                  text: 'Re-fresh',
-                  onTap: () {},
-                ),
+              left: 50,right: 50,
+              child: CustomButton(
+                text: 'Re-fresh',
+                onTap: () {},
               ),
             ),
             SizedBox(

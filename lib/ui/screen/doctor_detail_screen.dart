@@ -72,7 +72,7 @@ class DoctorDetailScreen extends StatelessWidget {
                           labelName: 'Location',
                           hideSeeAllLabel: true,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 16,
                         ),
                         CachedNetworkImage(imageUrl: Mock().mapCloneUrl()),
@@ -95,6 +95,7 @@ class DoctorDetailScreen extends StatelessWidget {
                 // disabled: _current != 2 ,
                 text: 'Book an Appoinment',
                 onTap: () {},
+                iconRight: const Icon(Icons.navigate_next_sharp),
               ),
             ),
           )
