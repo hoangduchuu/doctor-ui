@@ -75,6 +75,24 @@ Senior Consultant, Imaging Department, FV Hospital, Ho Chi Minh City, Vietnam, s
           description:
               '''Continuous Renal Replacement Therapy (CCRT), University of Medicine, Ho Chi Minh City, Vietnam, 2018 & 2019
 Echocardiography and cardiovascular disease, University of Medicine, Ho Chi Minh City, Vietnam, 2019'''),
+      DoctorModel(
+          id: '6',
+          name: 'Karim Alexi',
+          specialty: 'Sport health',
+          ratingScore: 6.5,
+          avatar: 'https://i.imgur.com/5xLl73t.png',
+          description:
+              '''Continuous Renal Replacement Therapy (CCRT), University of Medicine, Ho Chi Minh City, Vietnam, 2018 & 2019
+Echocardiography and cardiovascular disease, University of Medicine, Ho Chi Minh City, Vietnam, 2019'''),
+      DoctorModel(
+          id: '7',
+          name: 'Henry Kang',
+          specialty: 'Sport health',
+          ratingScore: 6.5,
+          avatar: 'https://i.imgur.com/DVrg0zP.png',
+          description:
+              '''Continuous Renal Replacement Therapy (CCRT), University of Medicine, Ho Chi Minh City, Vietnam, 2018 & 2019
+Echocardiography and cardiovascular disease, University of Medicine, Ho Chi Minh City, Vietnam, 2019'''),
     ];
   }
 
@@ -124,5 +142,6 @@ Echocardiography and cardiovascular disease, University of Medicine, Ho Chi Minh
       ),
     ];
   }
+
   String mapCloneUrl() => 'https://i.imgur.com/HOmFB7E.png';
 }
