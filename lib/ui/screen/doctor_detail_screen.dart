@@ -1,9 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:doctor_meet/model/doctor_model.dart';
+import 'package:doctor_meet/ui/components/date_item.dart';
 import 'package:doctor_meet/ui/components/header_label_component.dart';
 import 'package:doctor_meet/utils/config_color.dart';
+import 'package:doctor_meet/utils/mock.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
+
+import '../components/custom_button.dart';
 
 class DoctorDetailScreen extends StatelessWidget {
   const DoctorDetailScreen({Key? key, required this.doctor}) : super(key: key);
@@ -16,7 +20,85 @@ class DoctorDetailScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
-        children: [DoctorHeaderWidget(doctor: doctor), DescriptionWidget(doctor: doctor)],
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  DoctorHeaderWidget(doctor: doctor),
+                  Container(
+                    padding: const EdgeInsets.only(left: 16, right: 16, bottom: 0, top: 16),
+                    child: Column(
+                      children: [
+                        DescriptionWidget(doctor: doctor),
+                        const SizedBox(
+                          height: 24,
+                        ),
+                        const HeaderLabelComponent(
+                          labelName: 'Schedule',
+                          hideSeeAllLabel: true,
+                          customRightWidget: Text(
+                            "<June>",
+                            style: TextStyle(
+                              color: Color(0xff474cc5),
+                              fontSize: 16,
+                              fontFamily: "Poppins",
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        //List calendar
+                        Container(
+                          height: 50,
+                          child: ListView.separated(
+                              scrollDirection: Axis.horizontal,
+                              shrinkWrap: true,
+                              itemCount: 30,
+                              itemBuilder: (context, index) {
+                                if (index == 2) {
+                                  return DateItem(isSelected: true, dateTime: DateTime.now());
+                                }
+                                return DateItem(isSelected: false, dateTime: DateTime.now());
+                              },
+                              separatorBuilder: (context, index) => const SizedBox(height: 8, width: 8)),
+                        ),
+                        const SizedBox(
+                          height: 24,
+                        ),
+                        const HeaderLabelComponent(
+                          labelName: 'Location',
+                          hideSeeAllLabel: true,
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        CachedNetworkImage(imageUrl: Mock().mapCloneUrl()),
+                        const SizedBox(
+                          height: 200,
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          SafeArea(
+            top: false,
+            child: Container(
+              padding: const EdgeInsets.only(left: 24, right: 24),
+              width: MediaQuery.of(context).size.width,
+              child: CustomButton(
+                // disabled: _current != 2 ,
+                text: 'Book an Appoinment',
+                onTap: () {},
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
@@ -33,7 +115,6 @@ class DescriptionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -55,7 +136,9 @@ class DescriptionWidget extends StatelessWidget {
             trimMode: TrimMode.Line,
             delimiter: '',
             trimCollapsedText: '...Read more',
-            trimExpandedText: ' Less',
+            trimExpandedText: ' Collapse',
+            moreStyle: TextStyle(color: ConfigColor.primaryColor, fontSize: 16, fontWeight: FontWeight.bold),
+            lessStyle: TextStyle(color: ConfigColor.primaryColor, fontSize: 16, fontWeight: FontWeight.bold),
           )
         ],
       ),
@@ -119,7 +202,7 @@ class DoctorHeaderWidget extends StatelessWidget {
                 children: [
                   const SizedBox(height: 16.0),
                   Text('Dr. ${doctor.name}',
-                      style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
+                      style: const TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
                   const SizedBox(height: 12.0),
                   Row(
                     children: [
@@ -132,11 +215,11 @@ class DoctorHeaderWidget extends StatelessWidget {
                         child: const Icon(Icons.perm_identity_sharp, color: Colors.white),
                       ),
                       const SizedBox(width: 12.0),
-                      Text(doctor.specialty, style: TextStyle(color: Color(0xFFCFD2FF), fontSize: 18.0)),
+                      Text(doctor.specialty, style: const TextStyle(color: Color(0xFFCFD2FF), fontSize: 18.0)),
                       const SizedBox(width: 4.0),
                       const Icon(Icons.star, color: Color(0xFFF4C300), size: 20.0),
                       const SizedBox(width: 4.0),
-                      Text('${doctor.ratingScore}', style: TextStyle(color: Color(0xFFCFD2FF), fontSize: 18.0)),
+                      Text('${doctor.ratingScore}', style: const TextStyle(color: Color(0xFFCFD2FF), fontSize: 18.0)),
                     ],
                   ),
                   const SizedBox(height: 20.0),

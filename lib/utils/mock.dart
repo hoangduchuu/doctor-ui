@@ -124,4 +124,5 @@ Echocardiography and cardiovascular disease, University of Medicine, Ho Chi Minh
       ),
     ];
   }
+  String mapCloneUrl() => 'https://i.imgur.com/HOmFB7E.png';
 }
