@@ -44,7 +44,7 @@ class Mock {
           name: 'John doe',
           specialty: 'Dental',
           ratingScore: 4.8,
-          avatar: 'https://i.pravatar.cc/300?img=1',
+          avatar: 'https://i.imgur.com/UyE3SSy.png',
           description:
               'Specialization Degree Level I, Obstetrics & Gynaecology, University of Medicine and Pharmacy, Ho Chi Minh city, Vietnam, 2019'),
       DoctorModel(
@@ -52,7 +52,7 @@ class Mock {
           name: 'Alex',
           specialty: 'Heart',
           ratingScore: 4.9,
-          avatar: 'https://i.pravatar.cc/300?img=2',
+          avatar: 'https://i.imgur.com/ScjjH7V.png',
           description:
               'Senior Consultant, Endocrinology, Nguyen Tri Phuong Hospital, Ho Chi Minh city, Vietnam, 2014-2019'),
       DoctorModel(
@@ -60,7 +60,7 @@ class Mock {
           name: 'Chicharito',
           specialty: 'Heart',
           ratingScore: 4.7,
-          avatar: 'https://i.pravatar.cc/300?img=3',
+          avatar: 'https://i.imgur.com/yeim8Hv.png',
           description: '''Senior Consultant, Imaging Department, Saint Paul Hospital, Hanoi, Vietnam, 2000-2012
 Head of Department, Imaging Department, Bao Son Hospital, Hanoi, Vietnam, 2012-2013
 Deputy Head of Department, Imaging Department, Cardiology Hospital, Hanoi, Vietnam, 2013-2019
@@ -71,7 +71,7 @@ Senior Consultant, Imaging Department, FV Hospital, Ho Chi Minh City, Vietnam, s
           name: 'Ronaldo',
           specialty: 'Sport health',
           ratingScore: 4.5,
-          avatar: 'https://i.pravatar.cc/300?img=4',
+          avatar: 'https://i.imgur.com/o2PGmwF.png',
           description:
               '''Continuous Renal Replacement Therapy (CCRT), University of Medicine, Ho Chi Minh City, Vietnam, 2018 & 2019
 Echocardiography and cardiovascular disease, University of Medicine, Ho Chi Minh City, Vietnam, 2019'''),

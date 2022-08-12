@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:doctor_meet/model/doctor_model.dart';
 import 'package:doctor_meet/ui/components/aura_light_component.dart';
@@ -161,6 +163,7 @@ class DescriptionWidget extends StatelessWidget {
 class DoctorHeaderWidget extends StatelessWidget {
   const DoctorHeaderWidget({Key? key, required this.doctor}) : super(key: key);
   final DoctorModel doctor;
+  final double rightBottomRadius = 80.0;
 
   @override
   Widget build(BuildContext context) {
@@ -249,7 +252,7 @@ class DoctorHeaderWidget extends StatelessWidget {
                 bottom: -20,
                 right: -20,
                 child: AuraLightComponent(
-                  size: 250,
+                  size: 210,
                 ),
               ),
               Positioned(
@@ -260,13 +263,12 @@ class DoctorHeaderWidget extends StatelessWidget {
                   tag: doctor.id,
                   child: CachedNetworkImage(
                     imageUrl: doctor.avatar,
-                    fit: BoxFit.fitHeight,
+                    fit: BoxFit.fitWidth,
                     imageBuilder: (context, imageProvider) => Container(
-                      width: 160,
-                      height: 160,
+                      width: 210,
+                      height: 220,
                       decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
+                        image: DecorationImage(image: imageProvider, fit: BoxFit.fitHeight),
                       ),
                     ),
                   ),
