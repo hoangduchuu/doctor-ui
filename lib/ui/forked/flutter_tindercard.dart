@@ -37,6 +37,7 @@ class TinderSwapCard extends StatefulWidget {
   final List<Alignment> _cardAligns = [];
 
   @override
+  // ignore: library_private_types_in_public_api
   _TinderSwapCardState createState() => _TinderSwapCardState();
 
   /// Constructor requires Card Widget Builder [cardBuilder] and
@@ -47,6 +48,7 @@ class TinderSwapCard extends StatefulWidget {
   /// action(recover or swipe) when you release your swiping card it is the
   /// value of alignment, 0.0 means middle, so it need bigger than zero.
   /// and size control params;
+  // ignore: use_key_in_widget_constructors
   TinderSwapCard({
     required CardBuilder cardBuilder,
     required int totalNum,
