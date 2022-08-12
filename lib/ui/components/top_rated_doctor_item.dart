@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:doctor_meet/model/doctor_model.dart';
 import 'package:doctor_meet/utils/config_color.dart';
 import 'package:flutter/material.dart';
@@ -59,10 +60,10 @@ class TopRatedDoctorItem extends StatelessWidget {
                   Container(
                     height: 81.0,
                     width: 81.0,
-                    padding: const EdgeInsets.all(8.0),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16.0),
-                        image: DecorationImage(image: NetworkImage(model.avatar), fit: BoxFit.cover)),
+                        color: const Color(0xFFDAE2F1),
+                        borderRadius: BorderRadius.circular(8.0),
+                        image: DecorationImage(image: CachedNetworkImageProvider(model.avatar), fit: BoxFit.fitHeight)),
                   ),
                   const SizedBox(width: 16.0),
                   Column(
@@ -79,7 +80,7 @@ class TopRatedDoctorItem extends StatelessWidget {
                         children: [
                           const Icon(Icons.star, color: Color(0xFFF4C300), size: 20.0),
                           const SizedBox(width: 4.0),
-                          const Text('4.9', style: TextStyle(color: Color(0xFF999AA4), fontSize: 14.0)),
+                          Text('${model.ratingScore}', style: TextStyle(color: Color(0xFF999AA4), fontSize: 14.0)),
                           const SizedBox(width: 16.0),
                           Image.asset('assets/clock.png', height: 14),
                           const SizedBox(width: 8.0),

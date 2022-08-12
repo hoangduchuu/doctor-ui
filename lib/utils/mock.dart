@@ -40,28 +40,59 @@ class Mock {
   List<DoctorModel> getDoctors() {
     return [
       DoctorModel(
-        id: '1',
-        name: 'John doe',
-        specialty: 'Dental',
-        ratingScore: 4.8,
-        avatar: 'https://i.pravatar.cc/300?img=1',
-      ),
+          id: '1',
+          name: 'John doe',
+          specialty: 'Dental',
+          ratingScore: 4.8,
+          avatar: 'https://i.imgur.com/UyE3SSy.png',
+          description:
+              'Specialization Degree Level I, Obstetrics & Gynaecology, University of Medicine and Pharmacy, Ho Chi Minh city, Vietnam, 2019'),
       DoctorModel(
-          id: '2', name: 'Alex', specialty: 'Heart', ratingScore: 4.9, avatar: 'https://i.pravatar.cc/300?img=2'),
+          id: '2',
+          name: 'Alex',
+          specialty: 'Heart',
+          ratingScore: 4.9,
+          avatar: 'https://i.imgur.com/ScjjH7V.png',
+          description:
+              'Senior Consultant, Endocrinology, Nguyen Tri Phuong Hospital, Ho Chi Minh city, Vietnam, 2014-2019'),
       DoctorModel(
-        id: '3',
-        name: 'Chicharito',
-        specialty: 'Heart',
-        ratingScore: 4.7,
-        avatar: 'https://i.pravatar.cc/300?img=3',
-      ),
+          id: '3',
+          name: 'Chicharito',
+          specialty: 'Heart',
+          ratingScore: 4.7,
+          avatar: 'https://i.imgur.com/yeim8Hv.png',
+          description: '''Senior Consultant, Imaging Department, Saint Paul Hospital, Hanoi, Vietnam, 2000-2012
+Head of Department, Imaging Department, Bao Son Hospital, Hanoi, Vietnam, 2012-2013
+Deputy Head of Department, Imaging Department, Cardiology Hospital, Hanoi, Vietnam, 2013-2019
+Senior Consultant, Imaging Department, Imaging Department, Vinmec Central Park Hospital, Ho Chi Minh city, Vietnam, 2019-2021
+Senior Consultant, Imaging Department, FV Hospital, Ho Chi Minh City, Vietnam, since 2021'''),
       DoctorModel(
-        id: '5',
-        name: 'Ronaldo',
-        specialty: 'Sport health',
-        ratingScore: 4.5,
-        avatar: 'https://i.pravatar.cc/300?img=4',
-      ),
+          id: '5',
+          name: 'Ronaldo',
+          specialty: 'Sport health',
+          ratingScore: 4.5,
+          avatar: 'https://i.imgur.com/o2PGmwF.png',
+          description:
+              '''Continuous Renal Replacement Therapy (CCRT), University of Medicine, Ho Chi Minh City, Vietnam, 2018 & 2019
+Echocardiography and cardiovascular disease, University of Medicine, Ho Chi Minh City, Vietnam, 2019'''),
+      DoctorModel(
+          id: '6',
+          name: 'Karim Alexi',
+          specialty: 'Sport health',
+          ratingScore: 6.5,
+          avatar: 'https://i.imgur.com/5xLl73t.png',
+          description:
+              '''Continuous Renal Replacement Therapy (CCRT), University of Medicine, Ho Chi Minh City, Vietnam, 2018 & 2019
+Echocardiography and cardiovascular disease, University of Medicine, Ho Chi Minh City, Vietnam, 2019'''),
+      DoctorModel(
+          id: '7',
+          name: 'Henry Kang',
+          specialty: 'Sport health',
+          ratingScore: 6.5,
+          avatar: 'https://i.imgur.com/DVrg0zP.png',
+          description:
+              '''Continuous Renal Replacement Therapy (CCRT), University of Medicine, Ho Chi Minh City, Vietnam, 2018 & 2019
+Echocardiography and cardiovascular disease, University of Medicine, Ho Chi Minh City, Vietnam, 2019'''),
     ];
   }
 
@@ -111,4 +142,6 @@ class Mock {
       ),
     ];
   }
+
+  String mapCloneUrl() => 'https://i.imgur.com/HOmFB7E.png';
 }

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 
 class HeaderLabelComponent extends StatelessWidget {
-  const HeaderLabelComponent({Key? key, required this.labelName, this.onSeeAllPressed}) : super(key: key);
+  const HeaderLabelComponent(
+      {Key? key, required this.labelName, this.onSeeAllPressed, this.hideSeeAllLabel = false, this.customRightWidget})
+      : super(key: key);
   final String labelName;
   final VoidCallback? onSeeAllPressed;
+  final bool hideSeeAllLabel;
+  final Widget? customRightWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +25,28 @@ class HeaderLabelComponent extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 4.0),
-        InkWell(
-          onTap: () {
-            if (onSeeAllPressed != null) {
-              onSeeAllPressed!();
-            }
-          },
-          child: const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text('See all', style: TextStyle(color: Color(0xFFA4A9B5), fontSize: 13.0)),
-          ),
-        ),
+        _rightWiget(),
       ],
+    );
+  }
+
+  Widget _rightWiget() {
+    if (customRightWidget != null) {
+      return customRightWidget!;
+    }
+    return InkWell(
+      onTap: () {
+        if (onSeeAllPressed != null) {
+          onSeeAllPressed!();
+        }
+      },
+      child: Visibility(
+        visible: !hideSeeAllLabel,
+        child: const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Text('See all', style: TextStyle(color: Color(0xFFA4A9B5), fontSize: 13.0)),
+        ),
+      ),
     );
   }
 }
