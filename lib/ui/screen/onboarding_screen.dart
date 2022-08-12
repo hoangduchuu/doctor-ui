@@ -117,6 +117,7 @@ class _OboardingScreenState extends State<OboardingScreen> {
             right: 16,
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
                 model.content,
