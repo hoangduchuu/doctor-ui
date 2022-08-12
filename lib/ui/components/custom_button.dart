@@ -2,18 +2,20 @@ import 'package:doctor_meet/utils/config_color.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
-    Key? key,
-    required this.text,
-    required this.onTap,
-    this.disabled = false,
-    this.iconRight,
-  }) : super(key: key);
+  const CustomButton(
+      {Key? key,
+      required this.text,
+      required this.onTap,
+      this.disabled = false,
+      this.iconRight,
+      this.textStyle = const TextStyle(fontSize: 18)})
+      : super(key: key);
 
   final String text;
   final VoidCallback onTap;
   final bool disabled;
   final Widget? iconRight;
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +37,7 @@ class CustomButton extends StatelessWidget {
               child: Center(
                   child: Text(
             text,
+            style: textStyle,
           ))),
           iconRight == null
               ? Container()
