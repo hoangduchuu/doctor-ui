@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ConfigColor {
-  static Color primaryColor = Color(0xff363CC0);
-  static Color secondary = Color(0xFF474DCE);
+  static Color primaryColor = const Color(0xff363CC0);
+  static Color secondary = const Color(0xFF474DCE);
 
-  static Color black = Color(0xff000000);
-  static Color white = Color(0xffFFFFFF);
-  static Color bgColor = Color(0xffFFFFFF);
+  static Color black = const Color(0xff000000);
+  static Color white = const Color(0xffFFFFFF);
+  static Color bgColor = const Color(0xffFFFFFF);
 
-  static Color text = Color(0xff081d3f);
-  static Color textBlack = Color(0xff353535);
-  static Color textGrey = Color(0xFF888888);
+  static Color text = const Color(0xff081d3f);
+  static Color textBlack = const Color(0xff353535);
+  static Color textGrey = const Color(0xFF888888);
 }

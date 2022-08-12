@@ -4,7 +4,6 @@ import 'package:doctor_meet/ui/components/custom_button.dart';
 import 'package:doctor_meet/ui/screen/home_screen.dart';
 import 'package:doctor_meet/utils/mock.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class OboardingScreen extends StatefulWidget {
   const OboardingScreen({Key? key}) : super(key: key);
@@ -61,7 +60,7 @@ class _OboardingScreenState extends State<OboardingScreen> {
                   child: Container(
                     width: 12.0,
                     height: 12.0,
-                    margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                    margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: (Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black)
@@ -105,7 +104,7 @@ class _OboardingScreenState extends State<OboardingScreen> {
               Text(
                 model.content,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color(0xff081d3f),
                   fontSize: 30,
                   fontFamily: "Poppins",
@@ -115,7 +114,7 @@ class _OboardingScreenState extends State<OboardingScreen> {
               Text(
                 model.subContent,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color(0xff8c8c8c),
                   fontSize: 18,
                 ),
@@ -128,7 +127,7 @@ class _OboardingScreenState extends State<OboardingScreen> {
   }
 
   Widget buildGetStartedButton() {
-    return Container(
+    return SizedBox(
       width: MediaQuery.of(context).size.width,
       child: SafeArea(
         child: Padding(
@@ -139,8 +138,9 @@ class _OboardingScreenState extends State<OboardingScreen> {
             onTap: () {
               if (_current < 2) {
                 _controller.animateToPage(_current + 1);
-              } else
-                Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+              } else {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+              }
                 // Navigator.push(context, MaterialPageRoute(builder: (context) => ComponentScreen()));
             },
           ),

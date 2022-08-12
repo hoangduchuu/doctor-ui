@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:doctor_meet/model/appointment_model.dart';
 import 'package:doctor_meet/ui/components/appointment_item.dart';
 import 'package:doctor_meet/ui/components/custom_button.dart';
@@ -11,13 +9,13 @@ import 'package:flutter/material.dart';
 class AppointmentWidget extends StatelessWidget {
   AppointmentWidget({Key? key, required this.items}) : super(key: key);
   final List<AppointmentModel> items;
-  CardController controller = CardController();
+  final CardController controller = CardController();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 24,
         ),
         HeaderLabelComponent(

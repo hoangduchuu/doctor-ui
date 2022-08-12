@@ -24,12 +24,10 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        appBarTheme: const AppBarTheme(
-          systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Colors.green)
-        ),
+        appBarTheme: const AppBarTheme(systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Colors.green)),
         primarySwatch: Colors.blue,
       ),
-      home: OboardingScreen(),
+      home: const OboardingScreen(),
     );
   }
 }

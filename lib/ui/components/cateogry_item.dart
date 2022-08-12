@@ -18,7 +18,7 @@ class CategoryItem extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: Color(0xfff1f5ff),
+          color: const Color(0xfff1f5ff),
         ),
         padding: const EdgeInsets.only(top: 0, bottom: 0, left: 8, right: 8),
         child: Row(
@@ -26,15 +26,15 @@ class CategoryItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               width: 24,
               height: 24,
               child: Image.asset(model.icon),
             ),
-            SizedBox(width: 8),
+            const SizedBox(width: 8),
             Text(
               model.name,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Color(0xff081d3f),
                 fontSize: 16,
                 fontFamily: "Poppins",

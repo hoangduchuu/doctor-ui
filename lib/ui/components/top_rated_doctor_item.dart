@@ -29,16 +29,14 @@ class TopRatedDoctorItem extends StatelessWidget {
             extentRatio: 0.18,
             motion: const ScrollMotion(),
             children: [
-              Container(
-                child: CustomSlidableAction(
-                  onPressed: (BuildContext context) {
-                    if (onDirectMessageSelect != null) {
-                      onDirectMessageSelect!(model);
-                    }
-                  },
-                  backgroundColor: ConfigColor.primaryColor,
-                  child: Image.asset('assets/message.png', height: 40),
-                ),
+              CustomSlidableAction(
+                onPressed: (BuildContext context) {
+                  if (onDirectMessageSelect != null) {
+                    onDirectMessageSelect!(model);
+                  }
+                },
+                backgroundColor: ConfigColor.primaryColor,
+                child: Image.asset('assets/message.png', height: 40),
               ),
             ],
           ),
@@ -70,9 +68,9 @@ class TopRatedDoctorItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(model.name, style: TextStyle(color: Colors.black, fontSize: 16.0)),
+                      Text(model.name, style: const TextStyle(color: Colors.black, fontSize: 16.0)),
                       SizedBox(height: model.ratingScore),
-                      Text(model.specialty, style: TextStyle(color: Color(0xFF999AA4), fontSize: 14.0)),
+                      Text(model.specialty, style: const TextStyle(color: Color(0xFF999AA4), fontSize: 14.0)),
                       const SizedBox(height: 4.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -80,7 +78,7 @@ class TopRatedDoctorItem extends StatelessWidget {
                         children: [
                           const Icon(Icons.star, color: Color(0xFFF4C300), size: 20.0),
                           const SizedBox(width: 4.0),
-                          Text('${model.ratingScore}', style: TextStyle(color: Color(0xFF999AA4), fontSize: 14.0)),
+                          Text('${model.ratingScore}', style: const TextStyle(color: Color(0xFF999AA4), fontSize: 14.0)),
                           const SizedBox(width: 16.0),
                           Image.asset('assets/clock.png', height: 14),
                           const SizedBox(width: 8.0),

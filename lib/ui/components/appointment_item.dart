@@ -31,12 +31,12 @@ class AppointmentItem extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(model.doctor.name, style: TextStyle(color: Colors.white, fontSize: 16.0)),
+                      Text(model.doctor.name, style: const TextStyle(color: Colors.white, fontSize: 16.0)),
                       const SizedBox(height: 4.0),
                       Row(
                         children: [
-                          Text(model.specialty, style: TextStyle(color: Color(0xFFCFD2FF), fontSize: 14.0)),
-                          SizedBox(width: 6.0),
+                          Text(model.specialty, style: const TextStyle(color: Color(0xFFCFD2FF), fontSize: 14.0)),
+                          const SizedBox(width: 6.0),
                         ],
                       ),
                     ],
@@ -63,7 +63,7 @@ class AppointmentItem extends StatelessWidget {
                       Image.asset('assets/calendar.png'),
                       const SizedBox(width: 6.0),
                       Text(DateConverter.printMonthDayYear(model.dateStart),
-                          style: TextStyle(color: Colors.white, fontSize: 14.0)),
+                          style: const TextStyle(color: Colors.white, fontSize: 14.0)),
                     ],
                   ),
                 ),
@@ -79,7 +79,7 @@ class AppointmentItem extends StatelessWidget {
                       Image.asset('assets/time.png'),
                       const SizedBox(width: 6.0),
                       Text('${DateConverter.printTime(model.dateStart)} - ${DateConverter.printTime(model.dateEnd)}',
-                          style: TextStyle(color: Colors.white, fontSize: 14.0)),
+                          style: const TextStyle(color: Colors.white, fontSize: 14.0)),
                     ],
                   ),
                 ),

@@ -45,14 +45,14 @@ class DateItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          '${dateTime.weekday.toString()}',
-                          style: TextStyle(
+                          dateTime.weekday.toString(),
+                          style: const TextStyle(
                             color: Color(0xccffffff),
                             fontSize: 12,
                           ),
                         ),
-                        SizedBox(height: 2),
-                        Text(
+                        const SizedBox(height: 2),
+                        const Text(
                           "14",
                           style: TextStyle(
                             color: Colors.white,
@@ -84,7 +84,7 @@ class DateItem extends StatelessWidget {
             height: 48,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Color(0xfff1f5ff),
+              color: const Color(0xfff1f5ff),
             ),
             padding: const EdgeInsets.symmetric(
               horizontal: 13,
@@ -95,14 +95,14 @@ class DateItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
+                SizedBox(
                   width: 22,
                   height: 36,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
+                    children: const [
                       Text(
                         "Sun",
                         style: TextStyle(

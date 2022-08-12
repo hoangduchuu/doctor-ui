@@ -59,7 +59,7 @@ class DoctorDetailScreen extends StatelessWidget {
                           height: 16,
                         ),
                         //List calendar
-                        Container(
+                        SizedBox(
                           height: 50,
                           child: ListView.separated(
                               scrollDirection: Axis.horizontal,
@@ -128,34 +128,32 @@ class DescriptionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(
-            height: 16,
-          ),
-          const HeaderLabelComponent(
-            labelName: 'Description',
-            hideSeeAllLabel: true,
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          ReadMoreText(
-            doctor.description,
-            trimLines: 2,
-            style: TextStyle(color: ConfigColor.textBlack, fontSize: 16),
-            colorClickableText: ConfigColor.secondary,
-            trimMode: TrimMode.Line,
-            delimiter: '',
-            trimCollapsedText: '...Read more',
-            trimExpandedText: ' Collapse',
-            moreStyle: TextStyle(color: ConfigColor.primaryColor, fontSize: 16, fontWeight: FontWeight.bold),
-            lessStyle: TextStyle(color: ConfigColor.primaryColor, fontSize: 16, fontWeight: FontWeight.bold),
-          )
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(
+          height: 16,
+        ),
+        const HeaderLabelComponent(
+          labelName: 'Description',
+          hideSeeAllLabel: true,
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        ReadMoreText(
+          doctor.description,
+          trimLines: 2,
+          style: TextStyle(color: ConfigColor.textBlack, fontSize: 16),
+          colorClickableText: ConfigColor.secondary,
+          trimMode: TrimMode.Line,
+          delimiter: '',
+          trimCollapsedText: '...Read more',
+          trimExpandedText: ' Collapse',
+          moreStyle: TextStyle(color: ConfigColor.primaryColor, fontSize: 16, fontWeight: FontWeight.bold),
+          lessStyle: TextStyle(color: ConfigColor.primaryColor, fontSize: 16, fontWeight: FontWeight.bold),
+        )
+      ],
     );
   }
 }
