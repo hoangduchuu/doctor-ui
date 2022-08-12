@@ -274,10 +274,43 @@ class DoctorHeaderWidget extends StatelessWidget {
                   ),
                 ),
               ),
+              Positioned(
+                bottom: 0,
+                right: 0,
+                child: SizedBox(
+                  height: rightBottomRadius * 2,
+                  width: rightBottomRadius * 2,
+                  child: CustomPaint(
+                    painter: OutlineRoundColor(),
+                  ),
+                ),
+              ),
             ],
           ),
         ],
       ),
     );
   }
+}
+
+class OutlineRoundColor extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    var paint = Paint()
+      ..color = Colors.white
+      ..style = PaintingStyle.fill;
+
+    var path = Path();
+    path.moveTo(size.width, size.height / 2);
+    path.lineTo(size.width, size.height);
+    path.lineTo(size.width / 2, size.height);
+    path.lineTo(size.width / 2, size.height);
+
+    Offset center = Offset(size.width / 2, size.height / 2);
+    path.arcTo(Rect.fromCenter(center: center, width: size.width, height: size.height), pi / 2, -pi / 2, false);
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 }
