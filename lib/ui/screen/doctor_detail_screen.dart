@@ -14,13 +14,19 @@ class DoctorDetailScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          getTopBanner(),
+          DoctorHeaderWidget(doctor: doctor),
         ],
       ),
     );
   }
+}
 
-  Widget getTopBanner() {
+class DoctorHeaderWidget extends StatelessWidget {
+  const DoctorHeaderWidget({Key? key, required this.doctor}) : super(key: key);
+  final DoctorModel doctor;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 24),
       decoration: BoxDecoration(
@@ -37,19 +43,26 @@ class DoctorDetailScreen extends StatelessWidget {
               children: [
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: ConfigColor.secondary,
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(12.0), bottomRight: Radius.circular(40.0)),
-                    ),
+                  child: InkWell(
+                    onTap: () {
+                      if (Navigator.canPop(context)) {
+                        Navigator.pop(context);
+                      }
+                    },
                     child: Container(
-                      padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        color: const Color(0xFFEDF0FA).withOpacity(0.12),
-                        borderRadius: BorderRadius.circular(12.0),
+                        color: ConfigColor.secondary,
+                        borderRadius: const BorderRadius.only(
+                            bottomLeft: Radius.circular(12.0), bottomRight: Radius.circular(40.0)),
                       ),
-                      child: const Icon(Icons.arrow_back, size: 24, color: Colors.white),
+                      child: Container(
+                        padding: const EdgeInsets.all(8.0),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFEDF0FA).withOpacity(0.12),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        child: const Icon(Icons.arrow_back, size: 24, color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
