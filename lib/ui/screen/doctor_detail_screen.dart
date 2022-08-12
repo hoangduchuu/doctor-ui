@@ -35,7 +35,7 @@ class DoctorDetailScreen extends StatelessWidget {
 
                   //region bellow header
                   Container(
-                    padding: const EdgeInsets.only(left: 16, right: 16, bottom: 0, top: 16),
+                    padding: const EdgeInsets.all(16),
                     child: Column(
                       children: [
                         DescriptionWidget(doctor: doctor),

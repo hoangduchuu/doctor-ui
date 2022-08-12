@@ -20,7 +20,7 @@ class CategoryWidget extends StatelessWidget {
             Logger.print("Category onSeeAllPressed");
           },
         ),
-        const SizedBox(height: 8.0),
+        const SizedBox(height: 16.0),
         Container(
           width: MediaQuery.of(context).size.width,
           height: 50,

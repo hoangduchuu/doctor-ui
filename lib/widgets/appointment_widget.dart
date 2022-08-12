@@ -17,6 +17,9 @@ class AppointmentWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(
+          height: 24,
+        ),
         HeaderLabelComponent(
           labelName: 'UpComming Appoinment',
           onSeeAllPressed: () {
@@ -27,7 +30,8 @@ class AppointmentWidget extends StatelessWidget {
           alignment: Alignment.center,
           children: [
             Positioned(
-              left: 50,right: 50,
+              left: 50,
+              right: 50,
               child: CustomButton(
                 text: 'Re-fresh',
                 onTap: () {},

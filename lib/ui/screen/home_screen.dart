@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: ConfigColor.bgColor,
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(16),
           child: SingleChildScrollView(
             child: Column(
               children: [

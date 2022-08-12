@@ -21,7 +21,7 @@ class TopRatedDoctorWidget extends StatelessWidget {
             Logger.print("Top Rated Doctor onSeeAllPressed");
           },
         ),
-        const SizedBox(height: 24.0),
+        const SizedBox(height: 16.0),
         Container(
           width: MediaQuery.of(context).size.width,
           color: ConfigColor.white,
