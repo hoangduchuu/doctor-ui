@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:doctor_meet/model/doctor_model.dart';
+import 'package:doctor_meet/ui/components/aura_light_component.dart';
 import 'package:doctor_meet/ui/components/date_item.dart';
 import 'package:doctor_meet/ui/components/header_label_component.dart';
 import 'package:doctor_meet/utils/config_color.dart';
@@ -244,6 +245,13 @@ class DoctorHeaderWidget extends StatelessWidget {
                   const SizedBox(height: 20.0),
                 ],
               ),
+              const Positioned(
+                bottom: -20,
+                right: -20,
+                child: AuraLightComponent(
+                  size: 250,
+                ),
+              ),
               Positioned(
                 right: 0,
                 bottom: 0,
@@ -254,8 +262,8 @@ class DoctorHeaderWidget extends StatelessWidget {
                     imageUrl: doctor.avatar,
                     fit: BoxFit.fitHeight,
                     imageBuilder: (context, imageProvider) => Container(
-                      width: 200,
-                      height: 200,
+                      width: 160,
+                      height: 160,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
@@ -263,7 +271,7 @@ class DoctorHeaderWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ],
