@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:doctor_meet/model/slider_model.dart';
+import 'package:doctor_meet/ui/components/aura_light_component.dart';
 import 'package:doctor_meet/ui/components/custom_button.dart';
 import 'package:doctor_meet/ui/screen/home_screen.dart';
 import 'package:doctor_meet/utils/mock.dart';
@@ -89,8 +90,23 @@ class _OboardingScreenState extends State<OboardingScreen> {
             child: SafeArea(
                 top: true,
                 bottom: false,
-                child: CachedNetworkImage(
-                  imageUrl: model.image,
+                child: Stack(
+                  children: [
+                    const Positioned(
+                      left: 18,
+                      right: 18,
+                      top: 18,
+                      bottom: 18,
+                      child: AuraLightComponent(
+                        size: 400,
+                        space1: 100,
+                        space2: 180,
+                      ),
+                    ),
+                    CachedNetworkImage(
+                      imageUrl: model.image,
+                    ),
+                  ],
                 )),
           ),
         ),
