@@ -29,8 +29,8 @@ jobs:
         id: folderid
         with:
           cond: ${{ steps.branch.outputs.branch == 'develop' }}
-          if_true: ${{ secrets.MASTERFOLDERID}}
-          if_false: ${{ secrets.TESTFOLDERID}}
+          if_true: ${{ secrets.TESTFOLDERID}}
+          if_false: ${{ secrets.MASTERFOLDERID}}
       - run: flutter pub get
       - run: flutter build apk
       - name: Archive Files
@@ -48,10 +48,19 @@ jobs:
           overwrite: "false" # optional boolean
           mimeType: "application/vnd.android-package-archive"
 
+
+      - name: GET CHANNEL NAME
+        uses: haya14busa/action-cond@v1
+        id: channel
+        with:
+          cond: ${{ steps.branch.outputs.branch == 'develop' }}
+          if_true: doctor-ui-build-sounder
+          if_false: doctor-ui-build-sounder-release
+
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_CHANNEL: doctor-ui-build-sounder
+          SLACK_CHANNEL: ${{ steps.channel.outputs.value }}
           SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
           SLACK_ICON: https://github.githubassets.com/images/mona-loading-default.gif
           SLACK_MESSAGE: Above APK uploaded to this folder https://drive.google.com/drive/folders/${{ steps.folderid.outputs.value}}
