@@ -67,5 +67,4 @@ jobs:
           SLACK_TITLE: Upload new `${{steps.branch.outputs.branch}}` APK named `${{ steps.branch.outputs.branch }}_${{ steps.date.outputs.date }}_apk.apk`
           SLACK_USERNAME: cái loa phường
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_MSG_AUTHOR: $GITHUB_ACTOR
           SLACK_FOOTER: This message was sent by `Cái Loa`
