@@ -49,6 +49,14 @@ jobs:
           mimeType: "application/vnd.android-package-archive"
 
 
+      - name: Upload Deploygate
+        uses: minhchienwikipedia/deploygate-upload-app@master
+        with:
+          app_owner_name: hoangduchuuvn
+          api_token: ${{ secrets.DEPLOYGATE_API_TOKEN }}
+          app_file_path: "build/app/outputs/flutter-apk/app-release.apk"
+          message: Update ${{steps.branch.outputs.branch}} - ${{ steps.date.outputs.date }}
+
       - name: GET CHANNEL NAME
         uses: haya14busa/action-cond@v1
         id: channel
@@ -63,7 +71,7 @@ jobs:
           SLACK_CHANNEL: ${{ steps.channel.outputs.value }}
           SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
           SLACK_ICON: https://github.githubassets.com/images/mona-loading-default.gif
-          SLACK_MESSAGE: Above APK uploaded to this folder https://drive.google.com/drive/folders/${{ steps.folderid.outputs.value}}
+          SLACK_MESSAGE: Above APK uploaded to this folder https://drive.google.com/drive/folders/${{ steps.folderid.outputs.value}}. DeployGate Also uploaded
           SLACK_TITLE: Upload new `${{steps.branch.outputs.branch}}` APK named `${{ steps.branch.outputs.branch }}_${{ steps.date.outputs.date }}_apk.apk`
           SLACK_USERNAME: cái loa phường
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
