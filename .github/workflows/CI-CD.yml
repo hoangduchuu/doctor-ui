@@ -35,6 +35,9 @@ jobs:
           artifacts: "build/ios/iphoneos/app.ipa"
           tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.TOKEN }}
+          allowUpdates: true
+          replacesArtifacts: false
+     
   build_upload_notify:
     name: build_upload_notify
     runs-on: ubuntu-latest
@@ -67,6 +70,8 @@ jobs:
           artifacts: "build/app/outputs/flutter-apk/app-release.apk"
           tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.TOKEN }}
+          allowUpdates: true
+          replacesArtifacts: false
           
       - name: Archive Files
         run: |
