@@ -62,7 +62,13 @@ jobs:
           overwrite: "false" # optional boolean
           mimeType: "application/vnd.android-package-archive"
 
-
+      - name: Push to Releases
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/app/outputs/apk/debug/*"
+          tag: v1.0.${{ github.run_number }}
+          token: ${{ secrets.TOKEN }}
+          
       - name: GET CHANNEL NAME
         uses: haya14busa/action-cond@v1
         id: channel
