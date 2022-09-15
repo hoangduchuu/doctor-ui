@@ -7,20 +7,20 @@ on:
       - develop
 
 jobs:
-  build_ios:
-    name: Build Flutter (iOS)
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
-        with:
-          java-version: "12.x"
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: "stable"
-      - run: flutter pub get
-      - run: flutter clean
-      - run: flutter build ios --release --no-codesign
+#   build_ios:
+#     name: Build Flutter (iOS)
+#     runs-on: macos-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-java@v1
+#         with:
+#           java-version: "12.x"
+#       - uses: subosito/flutter-action@v2
+#         with:
+#           channel: "stable"
+#       - run: flutter pub get
+#       - run: flutter clean
+#       - run: flutter build ios --release --no-codesign
   build_upload_notify:
     name: build_upload_notify
     runs-on: ubuntu-latest
@@ -47,6 +47,13 @@ jobs:
           if_false: ${{ secrets.MASTERFOLDERID}}
       - run: flutter pub get
       - run: flutter build apk
+      - name: Push to Releases
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/app/outputs/flutter-apk/app-release.apk"
+          tag: v1.0.${{ github.run_number }}
+          token: ${{ secrets.TOKEN }}
+          
       - name: Archive Files
         run: |
           sudo apt-get update
@@ -62,12 +69,7 @@ jobs:
           overwrite: "false" # optional boolean
           mimeType: "application/vnd.android-package-archive"
 
-      - name: Push to Releases
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "build/app/outputs/apk/debug/*"
-          tag: v1.0.${{ github.run_number }}
-          token: ${{ secrets.TOKEN }}
+
           
       - name: GET CHANNEL NAME
         uses: haya14busa/action-cond@v1
